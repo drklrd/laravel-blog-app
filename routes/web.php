@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']] , function(){
+
+	Route::get('/',[
+		'uses' => 'PostController@getBlogIndex',
+		'as' => 'blog.index'
+	]);
+
+	Route::get('/blog',[
+		'uses' => 'PostController@getBlogIndex',
+		'as' => 'blog.index'
+	]);
+
+	Route::get('/blog/{post_id}',[
+		'uses' => 'PostController@getSinglePost',
+		'as' => 'blog.single'
+	]);
+
 });
