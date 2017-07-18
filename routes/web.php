@@ -28,4 +28,17 @@ Route::group(['middleware' => ['web']] , function(){
 		'as' => 'blog.single'
 	]);
 
+	// Other routes 
+
+	Route::get('/about',function(){
+		return view('frontend.other.about');
+	})->name('about');
+
+	Route::get('/contact',[
+		'uses' => 'ContactMessageController@getContactIndex',
+		'as' => 'contact'
+	]);
+
+
+
 });
