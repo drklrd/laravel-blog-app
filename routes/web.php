@@ -40,5 +40,17 @@ Route::group(['middleware' => ['web']] , function(){
 	]);
 
 
+	Route::group([
+		'prefix' => '/admin'
+	],function(){
+
+
+		Route::get('/',[
+			'uses' => 'AdminController@getIndex',
+			'as' => 'admin.index'
+		]);
+
+	});
+
 
 });
