@@ -4,13 +4,13 @@
 
 @if(Session::has('fail'))
 	<section class="info-box fail">
-		{{ Section::get('fail') }}
+		{{ Session::get('fail') }}
 	</section>
 @endif
 
 @if(Session::has('success'))
 	<section class="info-box success">
-		{{ Section::get('success') }}
+		{{ Session::get('success') }}
 	</section>
 @endif
 
@@ -19,7 +19,7 @@
 		<ul>
 			@foreach($errors->all() as $error)
 				<li>
-					{{ error }}
+					{{ $error }}
 				</li>
 			@endforeach
 		</ul>

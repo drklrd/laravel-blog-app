@@ -180,13 +180,9 @@ header.top-nav a{
 	padding: 8px;
 }
 
-
-
-
-
-
-
-
+.has-error{
+	border-color: red;
+}
 
 
 
