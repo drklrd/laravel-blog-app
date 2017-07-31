@@ -81,6 +81,11 @@ Route::group(['middleware' => ['web']] , function(){
 			'as' => 'admin.blog.post.update'
 		]);
 
+		Route::get('/blog/post/{post_id}/delete',[
+			'uses' => 'PostController@getDeletePost',
+			'as' => 'admin.blog.post.delete'
+		]);
+
 	});
 
 
