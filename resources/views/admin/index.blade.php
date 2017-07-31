@@ -33,8 +33,8 @@
 									<div class="edit">
 										<nav>
 											<ul>
-												<li><a href="  "> View Post </a></li>
-												<li><a href=""> Edit </a></li>
+												<li><a href=" {{ route('admin.blog.post',['post_id'=> $post->id,'end'=>'admin']) }} "> View Post </a></li>
+												<li><a href=" {{route('admin.blog.post.edit',['post_id' => $post->id]) }} "> Edit </a></li>
 												<li><a href="" class="danger"> Delete </a></li>
 											</ul>
 										</nav>
