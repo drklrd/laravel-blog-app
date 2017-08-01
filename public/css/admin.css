@@ -21,6 +21,11 @@ a:active{
 	color : #86c3ff;
 }
 
+.active{
+	/*background-color: white;*/
+	opacity: 0.5;
+}
+
 .btn{
 	display: inline-block;;
 	box-sizing: border-box;
