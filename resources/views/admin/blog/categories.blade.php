@@ -2,7 +2,7 @@
 
 @section('styles')
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href=" {{ URL::secure('src/css/categories.css')  }} ">
+	<link rel="stylesheet" href=" {{ URL::to('css/categories.css')  }} ">
 @endsection
 
 @section('content')
@@ -51,5 +51,5 @@
 	<script type="text/javascript">
 		var token = " {{ Session::token() }}  ";
 	</script>
-	<script src="  {{  URL::secure('src/js/categories.js') }} "></script>
+	<script src="  {{  URL::to('js/categories.js') }} "></script>
 @endsection

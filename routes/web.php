@@ -91,6 +91,11 @@ Route::group(['middleware' => ['web']] , function(){
 			'as' => 'admin.blog.post.delete'
 		]);
 
+		Route::post('/blog/category/create',[
+			'uses' => 'CategoryController@postCreateCategory',
+			'as' => 'admin.blog.category.create'
+		]);
+
 	});
 
 
