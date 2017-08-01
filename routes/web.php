@@ -56,6 +56,11 @@ Route::group(['middleware' => ['web']] , function(){
 
 		]);
 
+		Route::get('/blog/categories',[
+			'uses' => 'CategoryController@getCategoryIndex',
+			'as' => 'admin.blog.categories'
+		]);
+
 		Route::get('/blog/post/{post_id}&{end}',[
 			'uses' => 'PostController@getSinglePost',
 			'as' => 'admin.blog.post'

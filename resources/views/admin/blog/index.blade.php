@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('styles')
-	<link rel="stylesheet" href=" {{ URL::secure('src/css/form/css')  }} ">
+	<link rel="stylesheet" href=" {{ URL::secure('src/css/form.css')  }} ">
 @endsection
 
 @section('content')
