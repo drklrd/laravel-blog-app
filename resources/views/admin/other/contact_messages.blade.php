@@ -40,6 +40,11 @@
 			</section>
 		@endif
 	</div>
+	<div class="modal" id="contact-message-info">
+		<button class="btn" id="modal-close">
+			Close
+		</button>
+	</div>
 @endsection
 
 

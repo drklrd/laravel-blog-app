@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('styles')
-	<link rel="stylesheet" href=" {{ URL::to('src/css/modal.css') }} ">
+	<link rel="stylesheet" href=" {{ URL::to('css/modal.css') }} ">
 
 @endsection
 
@@ -62,7 +62,7 @@
 					@endif
 					@foreach($contact_messages as $contact_message)
 						<li>
-							<article data-message=" {{ $contact_message->body }} " data-id="{{ $contact_message->id }}">
+							<article data-message=" {{ $contact_message->body }} " data-id="{{ $contact_message->id }}" class="contact-message">
 								<div class="message-info">
 									<h3> {{ $contact_message->subject }} </h3>
 									<span class="info">  {{ $contact_message->sender }} | {{ $contact_message->created_at }} </span>
@@ -98,7 +98,7 @@
 	<script type="text/javascript">
 		var token = " {{ Session::token() }} ";
 	</script>
-	<script src=" {{ URL::secure('src/js/modal.js')  }} " ></script>
-	<script src=" {{ URL::secure('src/js/contact_messages.js')  }} " ></script>
+	<script src=" {{ URL::to('js/modal.js')  }} " ></script>
+	<script src=" {{ URL::to('js/contact_messages.js')  }} " ></script>
 
 @endsection
