@@ -102,6 +102,11 @@ Route::group(['middleware' => ['web']] , function(){
 			'as' => 'admin.blog.category.update'
 		]);
 
+		Route::get('/blog/category/{category_id}/delete',[
+			'uses' => 'CategoryController@getDeleteCategory',
+			'as' => 'admin.blog.category.delete'
+		]);
+
 	});
 
 

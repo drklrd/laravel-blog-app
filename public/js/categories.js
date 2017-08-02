@@ -7,6 +7,8 @@ var docReady = setInterval(function(){
 	var editSections = document.getElementsByClassName('edit');
 	for(var i=0; i<editSections.length;i++){
 		editSections[i].firstElementChild.firstElementChild.children[1].firstChild.addEventListener('click',startEdit);
+		editSections[i].firstElementChild.firstElementChild.children[2].firstChild.addEventListener('click',startDelete);
+
 	}
 
 	document.getElementsByClassName('btn')[0].addEventListener('click',createNewCategory);
@@ -22,6 +24,29 @@ function createNewCategory(e){
 
 	ajax('POST','/admin/blog/category/create',"name="+name,newCategoryCreated, [name] )
 
+}
+
+function startDelete(event){
+	deleteCategory(event);
+}
+
+function deleteCategory(event){
+	event.preventDefault();
+	event.target.removeEventListener('click',startDelete);
+	var categoryId = event.path[4].previousElementSibling.dataset['id'];
+	ajax("GET","/admin/blog/category/"+categoryId+"/delete",null,categoryDeleted,[event.path[5]]);
+
+}
+
+function categoryDeleted(params,success,responseObj){
+	var article = params[0];
+	if (success){
+		article.style.backgroundColor = "#ffc4be";
+		setTimeout(function(){
+			article.remove();
+			location.reload();
+		},300);
+	}
 }
 
 function startEdit(event){
