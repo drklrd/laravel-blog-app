@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('styles')
-	<link rel="stylesheet" href=" {{ URL::secure('src/css/form.css')  }} ">
+	<link rel="stylesheet" href=" {{ URL::to('css/form.css')  }} ">
 @endsection
 
 @section('content')
@@ -19,7 +19,9 @@
 			<div class="input-group">
 				<label for="category_select">Add Categories</label>
 				<select name="category_select" id="category_select">
-					<option value="Dummy">dummy</option>
+					@foreach($categories as $category)
+						<option value=" {{ $category->id }} "> {{ $category->name }}  </option>
+					@endforeach
 				</select>
 				<button type="button" class="btn">Add Catgory</button>
 				<div class="added-categories">
@@ -38,5 +40,5 @@
 @endsection
 
 @section('scripts')
-	<script src="{{ URL::secure('src/js/posts.js') }}" ></script>
+	<script src="{{ URL::to('js/posts.js') }}" ></script>
 @endsection
