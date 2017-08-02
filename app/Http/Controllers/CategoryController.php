@@ -28,4 +28,20 @@ class CategoryController extends Controller
 		}
 		return Response::json(['message' => 'Error during creation'],404);
 	}
+
+
+	public function postUpdateCategory(Request $request)
+	{
+		$this->validate($request,[
+			'name' => 'required|unique:categories'
+		]);
+
+		$category = Category::find($request['category_id']);
+		if(!$category){
+			return Response::json(['message' => 'Category no found'],404);
+		}
+		$category->name=$request['name'];
+		$category->update();
+		return Response::json(['message' => 'Updated !','new_name' => $request['name']],200);
+	}
 }
