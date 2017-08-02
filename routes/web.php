@@ -47,7 +47,7 @@ Route::group(['middleware' => ['web']] , function(){
 
 	Route::get('/admin/login',[
 		'uses' => 'AdminController@getLogin',
-		'as' => 'admin.login'
+		'as' => 'login'
 	]);
 
 	Route::post('/admin/login',[
@@ -56,7 +56,8 @@ Route::group(['middleware' => ['web']] , function(){
 	]);
 
 	Route::group([
-		'prefix' => '/admin'
+		'prefix' => '/admin',
+		'middleware' => 'auth'
 	],function(){
 
 
